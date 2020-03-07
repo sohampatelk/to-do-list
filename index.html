@@ -9,6 +9,46 @@
     <script type="text/javascript" src="js/script.js" defer></script>
 </head>
 <body>
-    <h1>To-do List</h1> 
+    <h1>Java Script To-do List</h1> 
+
+    <form id="table-form" action="#" method="GET">
+        <h2>Add to To-Dos:</h2>
+        <label for="task">
+            Enter the task:
+            <input name="task" id="task" type="text" placeholder="Enter task">
+        </label>
+        <button type="submit" id="run-submit">
+            Add in Table
+        </button>
+    </form>
+
+    <table id="my-table">
+        <!-- open table -->
+        <thead>
+            <!-- Open table head -->
+            <tr>
+                <th>Active TO-do List</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr>
+                <td>Please do laundry</td>
+                <td><button>Complete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="comp-table">
+        <thead>
+            <tr>
+                <th>Completed List</th>
+            </tr>
+        </thead>
+        <tbody id="comp-table-body">
+            <tr>
+                <td>Buy Milk</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
