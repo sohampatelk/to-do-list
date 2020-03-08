@@ -16,7 +16,22 @@ myForm.addEventListener("submit",function(event){
     newCell.textContent = taskValue;
     newRow.appendChild(newCell);
 
-    //create button element with row 
+
+    //create button element with row -delete
+    var deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click",function(event){
+        deleteTask(this);//delete the row
+    });
+
+    //create cell for delete button in table
+    var deleteCell = document.createElement("td");
+    deleteCell.appendChild(deleteButton);
+    newRow.appendChild(deleteCell);
+
+
+    //create button element with row - complete
     var compButton = document.createElement("button");
     compButton.textContent = "Complete";
 
@@ -29,6 +44,7 @@ myForm.addEventListener("submit",function(event){
     compCell.appendChild(compButton);
     newRow.appendChild(compCell);
 
+    
     //append table row into new table body 
     var tableBody = document.querySelector("#table-body");
     tableBody.appendChild(newRow);
@@ -53,4 +69,12 @@ function completedTask(element){//element will be button what we pressed it.
     console.log(tableRow.lastChild);
     //remove button from table row because of task is completed.
     tableRow.removeChild(tableRow.lastChild);
+}
+
+
+
+//Delete row from table- todo list or table completed list
+function deleteTask(element){//element will be button what we pressed it.
+    var tableRow = element.parentNode.parentNode;//2 levels up from bottom,to get our row.
+    tableRow.parentNode.removeChild(tableRow);//an element can not delete itself...so we havve to tell the parent to do it for us..
 }
