@@ -1,7 +1,5 @@
-alert("Hello");
-
+//alert("Hello");
 var myForm = document.querySelector("#table-form");
-
 
 //my-form submiting request
 myForm.addEventListener("submit",function(event){
@@ -55,5 +53,4 @@ function completedTask(element){//element will be button what we pressed it.
     console.log(tableRow.lastChild);
     //remove button from table row because of task is completed.
     tableRow.removeChild(tableRow.lastChild);
-    //tableRow.parentNode.removeChild(tableRow);//an element can not delete itself...so we havve to tell the parent to do it for us..
 }

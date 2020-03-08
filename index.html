@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>To-Do List</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
     <script type="text/javascript" src="./js/script.js" defer></script>
 </head>
+
 <body>
-    <h1>Java Script To-do List</h1> 
+<h1>Java Script To-do List</h1>
 
-    <form id="table-form" action="#" method="GET">
-        <h2>Add to To-Dos:</h2>
-        <label for="task">
-            Enter the task:
-            <input name="task" id="task" type="text" placeholder="Enter task">
-        </label>
-        <button type="submit" id="run-submit">
-            Add in Table
-        </button>
-    </form>
+<form id="table-form" action="#" method="GET">
+    <h2>Add to To-Dos:</h2>
+    <label for="task">
+    Enter the task:
+    <input name="task" id="task" type="text" placeholder="Enter task" />
+    </label>
+    <button type="submit" id="run-submit">
+    Add in Table
+    </button>
+</form>
 
-    <aside>
+<aside>
     <table id="my-table">
-        <!-- open table -->
-        <thead>
-            <!-- Open table head -->
-            <tr>
-                <th>Active TO-do List</th>
-            </tr>
-        </thead>
-        <tbody id="table-body">
-            
-        </tbody>
+    <!-- open table -->
+    <thead>
+        <!-- Open table head -->
+        <tr>
+        <th>Active TO-do List</th>
+        </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
     </table>
     <table id="comp-table">
-        <thead>
-            <tr>
-                <th>Completed List</th>
-            </tr>
-        </thead>
-        <tbody id="comp-table-body">
-        </tbody>
+    <thead>
+        <tr>
+        <th>Completed List</th>
+        </tr>
+    </thead>
+    <tbody id="comp-table-body"></tbody>
     </table>
 </aside>
 </body>
