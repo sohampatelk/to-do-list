@@ -41,21 +41,6 @@ myForm.addEventListener("submit",function(event){
 });
 
 
-/* //grab existing buttons..which clicked
-var allButtons = document.querySelectorAll("#table-body>tr>td>button");
-console.log(allButtons);
-//Loop through our query selected buttons,
-for(var i=0; i<allButtons.length ; i++){
-    //lets add listerners to these!!
-    allButtons[i].addEventListener("click",function(event){
-        //addRowCompaleteTable(this);
-        console.log(this.value);
-        deleteRow(this);
-    });
-} */
-
-
-
 //Deleting row from to-do list table
 function completedTask(element){//element will be button what we pressed it.
     
