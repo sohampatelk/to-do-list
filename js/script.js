@@ -67,6 +67,33 @@ myForm.addEventListener("submit",function(event){
 });
 
 
+//Delete row from table- todo list or table completed list
+function deleteTask(element){//element will be button what we pressed it.
+    var tableRow = element.parentNode.parentNode;//2 levels up from bottom,to get our row.
+    tableRow.parentNode.removeChild(tableRow);//an element can not delete itself...so we havve to tell the parent to do it for us..
+}
+
+
+//Editing row from to-do list and completed list
+function editTask(element){
+    console.log(element);
+    //select row for edit
+    var editRow = element.parentNode.parentNode;
+    //select first element of row for edit
+    var editChild = element.parentNode.parentNode.firstChild;
+    console.log(editChild);
+    //create element for edit input
+    var editInput = document.createElement("input");
+    editInput.className="editRow1";
+    editInput.value = editChild.textContent;
+    console.log(editInput.value);
+    //relace editInput element with editChild element of Row.
+    editRow.replaceChild(editInput,editChild);
+    //Create input element for edit
+    console.log(editInput);
+}
+
+
 //Deleting row from to-do list table
 function completedTask(element){//element will be button what we pressed it.
     
@@ -85,8 +112,3 @@ function completedTask(element){//element will be button what we pressed it.
 
 
 
-//Delete row from table- todo list or table completed list
-function deleteTask(element){//element will be button what we pressed it.
-    var tableRow = element.parentNode.parentNode;//2 levels up from bottom,to get our row.
-    tableRow.parentNode.removeChild(tableRow);//an element can not delete itself...so we havve to tell the parent to do it for us..
-}
