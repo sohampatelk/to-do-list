@@ -36,7 +36,7 @@ myForm.addEventListener("submit",function(event){
     editButton.textContent = "Edit";
     //add event lisner for -Edit- button
     editButton.addEventListener("click",function(event){
-        editTask(this);//delete the row
+        editTask(this);//edit the row
     });
     //create cell for -Edit- button in table
     var editCell = document.createElement("td");
@@ -48,9 +48,9 @@ myForm.addEventListener("submit",function(event){
     //create button element with row - complete
     var compButton = document.createElement("button");
     compButton.textContent = "Complete";
-    //add event lisner for -Compaete- button
+    //add event lisner for -Complete- button
     compButton.addEventListener("click",function(event){
-        completedTask(this);//delete the row
+        completedTask(this);//Complate the row
     });
     //create cell for complete button in table
     var compCell = document.createElement("td");
@@ -79,18 +79,22 @@ function editTask(element){
     console.log(element);
     //select row for edit
     var editRow = element.parentNode.parentNode;
+    console.log(editRow);
     //select first element of row for edit
     var editChild = element.parentNode.parentNode.firstChild;
     console.log(editChild);
-    //create element for edit input
-    var editInput = document.createElement("input");
-    editInput.className="editRow1";
-    editInput.value = editChild.textContent;
-    console.log(editInput.value);
-    //relace editInput element with editChild element of Row.
-    editRow.replaceChild(editInput,editChild);
-    //Create input element for edit
-    console.log(editInput);
+    //print edit child text value
+    console.log(editChild.textContent);
+    
+    //edit data and
+    var editData =  prompt("Please edit data:",editChild.textContent);
+    
+    if(editData != ""){
+    element.parentNode.parentNode.firstChild.textContent=editData; 
+    }
+    else{
+    alert("Please enter something..");
+    }
 }
 
 
