@@ -16,6 +16,17 @@ myForm.addEventListener("submit",function(event){
     newCell.textContent = taskValue;
     newRow.appendChild(newCell);
 
+    //create a date string when task is active in to-do list
+    var date = new Date();
+    var dateTimeString = "";
+    dateTimeString = date.getFullYear()+"."+ date.getMonth()+"."+date.getDay()+"."+date.getHours()+" Hr "+date.getMinutes()+" Min "+date.getSeconds()+" Sec ";
+    console.log(dateTimeString);
+    //create element for time cell
+    var timeCell = document.createElement("td");
+    //timecell has a text contnt as a time string
+    timeCell.textContent = dateTimeString;
+    newRow.appendChild(timeCell);
+
 
     //create button element with row -delete
     var deleteButton = document.createElement("button");
@@ -101,15 +112,32 @@ function editTask(element){
 //Deleting row from to-do list table
 function completedTask(element){//element will be button what we pressed it.
     
+
+    //create a date-time string when task is completed in list
+    var date = new Date();
+    var compDateTimeString = "";
+    compDateTimeString = date.getFullYear() + "." + date.getMonth() + "." + date.getDay() + "." + date.getHours() + " Hr " + date.getMinutes() + " Min " + date.getSeconds() + " Sec ";
+    console.log(compDateTimeString);
+    //create element for time cell
+    var timeCell = document.createElement("td");
+    //timecell has a text content as a time string
+    timeCell.textContent = compDateTimeString;
+    //console.log(timecell.textContent);
+
+    //Competed table logic
     var tableRow = element.parentNode.parentNode;//2 levels up from bottom,to get our row.
     console.log(tableRow);
     //select comleted dtable for append competed row
     var compTableBody = document.querySelector("#comp-table-body");
     console.log(compTableBody);
+
+    //replace time cell with table row node 1
+    tableRow.replaceChild(timeCell, tableRow.childNodes[1]);
+    //append table row with new table
     compTableBody.appendChild(tableRow);
 
     //just print last child
-    console.log(tableRow.lastChild);
+    //console.log(tableRow.lastChild);
     //remove button from table row because of task is completed.
     tableRow.removeChild(tableRow.lastChild);
 }
