@@ -19,7 +19,7 @@ myForm.addEventListener("submit",function(event){
     //create a date string when task is active in to-do list
     var date = new Date();
     var dateTimeString = "";
-    dateTimeString = date.getFullYear()+"."+ date.getMonth()+"."+date.getDay()+"."+date.getHours()+" Hr "+date.getMinutes()+" Min "+date.getSeconds()+" Sec ";
+    dateTimeString = date.getFullYear() + "." + Number(date.getMonth() + 1) +"."+date.getDate()+" - "+date.getHours()+"H"+date.getMinutes()+"M"+date.getSeconds()+"S  ";
     console.log(dateTimeString);
     //create element for time cell
     var timeCell = document.createElement("td");
@@ -115,13 +115,13 @@ function completedTask(element){//element will be button what we pressed it.
 
     //create a date-time string when task is completed in list
     var date = new Date();
-    var compDateTimeString = "";
-    compDateTimeString = date.getFullYear() + "." + date.getMonth() + "." + date.getDay() + "." + date.getHours() + " Hr " + date.getMinutes() + " Min " + date.getSeconds() + " Sec ";
+    var compDateTimeString = date.getFullYear() + "." + Number(date.getMonth()+1) + "." + date.getDate() + " - " + date.getHours() + "H" + date.getMinutes() + "M" + date.getSeconds() + "S  ";
     console.log(compDateTimeString);
     //create element for time cell
     var timeCell = document.createElement("td");
     //timecell has a text content as a time string
     timeCell.textContent = compDateTimeString;
+    
     //console.log(timecell.textContent);
 
     //Competed table logic
